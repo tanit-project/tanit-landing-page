@@ -17,7 +17,38 @@ export default defineConfig({
     astroImageTools,
     icon({
       include: {
-        ph: ["star-duotone", "lightning-duotone", "globe-duotone"]
+        ph: [
+          "star-duotone",
+          "lightning-duotone",
+          "globe-duotone",
+          "users-duotone",
+          "buildings-duotone",
+          "briefcase-duotone",
+          "check-circle-duotone",
+          "x-circle-duotone",
+          "code-duotone",
+          "puzzle-piece-duotone",
+          "brain-duotone",
+          "shield-check-duotone",
+          "linkedin-logo-duotone",
+          "twitter-logo-duotone",
+          "github-logo-duotone",
+          "currency-dollar-duotone",
+          "arrow-left-duotone",
+          "layout-duotone",
+          "calendar-duotone",
+          "clock-duotone",
+          "link-duotone",
+          "check-square-duotone",
+          "credit-card-duotone",
+          "paint-brush-duotone",
+          "chart-line-duotone",
+          "google-logo-duotone",
+          "lock-key-duotone",
+          "certificate-duotone",
+          "lifebuoy-duotone",
+          "handshake-duotone"
+        ]
       }
     }),
   ],
