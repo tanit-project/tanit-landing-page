@@ -7,7 +7,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://salsa.dev',
+  site: 'https://payflo.dev',
   // Enable server-side rendering for dynamic features if needed
   output: 'static',
   integrations: [

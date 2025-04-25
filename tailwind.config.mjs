@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'salsa-purple': '#7928CA',
-        'salsa-blue': '#0070F3',
-        'salsa-pink': '#FF4D4D',
-        'salsa-gray': '#F4F7FA',
-        'salsa-dark': '#111111',
+        'payflo-purple': '#7928CA',
+        'payflo-blue': '#0070F3',
+        'payflo-pink': '#FF4D4D',
+        'payflo-gray': '#F4F7FA',
+        'payflo-dark': '#111111',
       },
       fontFamily: {
         sans: ['Inter Variable', 'sans-serif'],

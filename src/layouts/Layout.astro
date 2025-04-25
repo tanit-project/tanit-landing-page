@@ -12,7 +12,7 @@ interface Props {
 
 const { 
   title, 
-  description = "Salsa makes it fast and easy for SaaS platforms to build and embed payroll using our infrastructure, APIs and UI components."
+  description = "Payflo makes it fast and easy for SaaS platforms to build and embed payroll using our infrastructure, APIs and UI components."
 } = Astro.props;
 
 // Preload critical assets
@@ -39,12 +39,12 @@ const faviconImg = await getImage({src: '/favicon.png', width: 32, height: 32});
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Salsa",
-        "url": "https://salsa.dev",
-        "logo": "https://salsa.dev/logo.png",
+        "name": "Payflo",
+        "url": "https://payflo.dev",
+        "logo": "https://payflo.dev/logo.png",
         "sameAs": [
-          "https://twitter.com/salsa_dev",
-          "https://www.linkedin.com/company/salsa-dev"
+          "https://twitter.com/payflo_dev",
+          "https://www.linkedin.com/company/payflo-dev"
         ]
       }
     </script>
@@ -54,14 +54,14 @@ const faviconImg = await getImage({src: '/favicon.png', width: 32, height: 32});
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:image" content="https://salsa.dev/og-image.jpg" />
+    <meta property="og:image" content="https://payflo.dev/og-image.jpg" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@salsa_dev" />
+    <meta name="twitter:site" content="@payflo_dev" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://salsa.dev/twitter-image.jpg" />
+    <meta name="twitter:image" content="https://payflo.dev/twitter-image.jpg" />
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />

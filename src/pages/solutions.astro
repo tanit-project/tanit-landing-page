@@ -41,8 +41,8 @@ const solutions = [
 ---
 
 <Layout 
-  title="Salsa - Solutions" 
-  description="Discover how Salsa's payroll infrastructure can be customized for your specific industry and use case."
+  title="Payflo - Solutions" 
+  description="Discover how Payflo's payroll infrastructure can be customized for your specific industry and use case."
 >
   <section class="pt-20 pb-16 md:pt-28 md:pb-24">
     <div class="container-custom">
@@ -52,18 +52,18 @@ const solutions = [
         </h1>
         <p class="animate-on-scroll delay-1 mt-6 text-xl text-gray-600">
           Whether you're building an HR platform, vertical SaaS solution, or staffing platform, 
-          Salsa's payroll infrastructure adapts to your specific needs.
+          Payflo's payroll infrastructure adapts to your specific needs.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-salsa-gray">
+  <section class="py-20 bg-payflo-gray">
     <div class="container-custom">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {solutions.map((solution, index) => (
           <div class={`bg-white rounded-xl p-8 shadow-lg animate-on-scroll delay-${index + 2}`}>
-            <div class="h-12 w-12 rounded-lg bg-gradient-to-r from-salsa-purple to-salsa-blue flex items-center justify-center text-white">
+            <div class="h-12 w-12 rounded-lg bg-gradient-to-r from-payflo-purple to-payflo-blue flex items-center justify-center text-white">
               <Icon name={solution.icon} class="h-6 w-6" />
             </div>
             <h3 class="mt-6 text-2xl font-semibold">{solution.title}</h3>
@@ -71,7 +71,7 @@ const solutions = [
             <ul class="mt-6 space-y-3">
               {solution.features.map(feature => (
                 <li class="flex items-center text-gray-700">
-                  <Icon name="ph:check-circle-duotone" class="h-5 w-5 text-salsa-purple mr-2" />
+                  <Icon name="ph:check-circle-duotone" class="h-5 w-5 text-payflo-purple mr-2" />
                   {feature}
                 </li>
               ))}

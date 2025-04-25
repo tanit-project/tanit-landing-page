@@ -1,4 +1,4 @@
-# Salsa.dev - Astro 5.7 Implementation
+# Payflo.dev - Astro 5.7 Implementation
 
 This is a modern reimplementation of the [salsa.dev](https://www.salsa.dev/) website using Astro 5.7, following the latest best practices.
 
@@ -43,8 +43,8 @@ This is a modern reimplementation of the [salsa.dev](https://www.salsa.dev/) web
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/salsa-dev-astro.git
-cd salsa-dev-astro
+git clone https://github.com/ctrimm/astro-payroll-solution-theme.git
+cd astro-payroll-solution-theme
 ```
 
 2. Install dependencies:

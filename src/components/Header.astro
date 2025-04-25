@@ -13,8 +13,8 @@ const navItems = [
 
 <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
   <div class="container-custom flex items-center justify-between h-20">
-    <a href="/" class="flex items-center" aria-label="Salsa home">
-      <Image src={logoSrc} alt="Salsa Logo" width={120} height={40} />
+    <a href="/" class="flex items-center" aria-label="Payflo home">
+      <Image src={logoSrc} alt="Payflo Logo" width={120} height={40} />
     </a>
     
     <!-- Desktop Nav -->
@@ -22,7 +22,7 @@ const navItems = [
       {navItems.map(item => (
         <a 
           href={item.href} 
-          class="text-gray-700 hover:text-salsa-purple transition-colors duration-200"
+          class="text-gray-700 hover:text-payflo-purple transition-colors duration-200"
         >
           {item.name}
         </a>
@@ -30,7 +30,7 @@ const navItems = [
     </nav>
     
     <div class="flex items-center space-x-4">
-      <a href="/login" class="hidden md:inline-block text-salsa-dark hover:text-salsa-purple">Log In</a>
+      <a href="/login" class="hidden md:inline-block text-payflo-dark hover:text-payflo-purple">Log In</a>
       <a href="/book-demo" class="btn btn-primary">Book a Demo</a>
       
       <!-- Mobile Menu Button -->
@@ -52,12 +52,12 @@ const navItems = [
       {navItems.map(item => (
         <a 
           href={item.href} 
-          class="block py-2 text-gray-700 hover:text-salsa-purple"
+          class="block py-2 text-gray-700 hover:text-payflo-purple"
         >
           {item.name}
         </a>
       ))}
-      <a href="/login" class="block py-2 text-gray-700 hover:text-salsa-purple">Log In</a>
+      <a href="/login" class="block py-2 text-gray-700 hover:text-payflo-purple">Log In</a>
     </div>
   </div>
 </header>

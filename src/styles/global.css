@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply font-sans text-salsa-dark;
+  @apply font-sans text-payflo-dark;
 }
 
 @keyframes fadeInUp {
@@ -54,11 +54,11 @@ body {
 }
 
 .btn-primary {
-  @apply bg-salsa-purple text-white hover:bg-opacity-90;
+  @apply bg-payflo-purple text-white hover:bg-opacity-90;
 }
 
 .btn-secondary {
-  @apply bg-white text-salsa-dark border border-gray-200 hover:bg-gray-50;
+  @apply bg-white text-payflo-dark border border-gray-200 hover:bg-gray-50;
 }
 
 .container-custom {
