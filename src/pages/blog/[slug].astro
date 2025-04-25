@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// This would typically come from a CMS or other data source
+export async function getStaticPaths() {
+  // For demo purposes, we'll hardcode a couple of blog posts
+  return [
+    {
+      params: { slug: 'introducing-salsa' },
+      props: {
+        title: 'Introducing Salsa: Modern Payroll Infrastructure',
+        date: 'April 15, 2025',
+        author: 'Juan Rodriguez',
+        authorRole: 'Founder & CEO',
+        authorAvatar: '/avatar-juan.jpg',
+        excerpt: 'Today, we're excited to introduce Salsa, a modern payroll infrastructure designed for developers.',
+        content: `
+          <p>Today, we're excited to introduce Salsa, a modern payroll infrastructure designed for developers. Our mission is to make it fast and easy for SaaS platforms to build and embed payroll using our infrastructure, APIs, and UI components.</p>
+          
+          <p>For too long, payroll has been one of the most challenging aspects of building HR and workforce management software. Legacy systems are complex, hard to integrate with, and were designed in an era before modern APIs.</p>
+          
+          <h2>Why We Built Salsa</h2>
+          
+          <p>Our team has spent years working on payroll systems at companies like Intuit, Gusto, and Xero. We've experienced firsthand the challenges of building and maintaining payroll infrastructure, and we knew there had to be a better way.</p>
+          
+          <p>With Salsa, we're providing the building blocks that allow any software platform to offer payroll capabilities to their customers, without having to build everything from scratch.</p>
+          
+          <h2>Key Features</h2>
+          
+          <ul>
+            <li><strong>Flexible APIs</strong>: Our RESTful and GraphQL APIs are designed to be easy to use and integrate with.</li>
+            <li><strong>UI Components</strong>: Ready-to-use components that you can customize to match your brand.</li>
+            <li><strong>Tax Compliance</strong>: We handle all the complex tax calculations, filings, and payments.</li>
+            <li><strong>White-Label Solution</strong>: Offer a seamless payroll experience that feels like a native part of your platform.</li>
+          </ul>
+          
+          <p>We've built Salsa with modern development practices in mind, focusing on developer experience, reliability, and scalability. Our infrastructure is designed to grow with your business, whether you're serving small startups or enterprise customers.</p>
+          
+          <h2>Get Started Today</h2>
+          
+          <p>We're launching Salsa in the U.S. and Canada, with plans to expand to more countries in the coming months. If you're interested in adding payroll to your platform, we'd love to chat. Book a demo with our team to learn more about how Salsa can work for you.</p>
+        `,
+        image: '/blog/introducing-salsa.jpg',
+      }
+    },
+    {
+      params: { slug: 'building-payroll-for-modern-work' },
+      props: {
+        title: 'Building Payroll for Modern Work',
+        date: 'April 10, 2025',
+        author: 'Sophia Chen',
+        authorRole: 'CTO',
+        authorAvatar: '/avatar-sophia.jpg',
+        excerpt: 'How we designed a payroll infrastructure that meets the needs of today's workforce.',
+        content: `
+          <p>The world of work has changed dramatically in recent years. Remote work, flexible arrangements, and the gig economy have transformed how people work and get paid. However, most payroll systems were designed for a 9-to-5 world where everyone works full-time for a single employer.</p>
+          
+          <p>At Salsa, we've built our payroll infrastructure from the ground up to support the modern workforce. Here's how we're addressing the challenges of modern work:</p>
+          
+          <h2>Flexibility First</h2>
+          
+          <p>Modern work requires flexible payment options. Our system supports various payment schedules, from traditional bi-weekly payroll to daily payouts for gig workers. We've designed our APIs to accommodate all kinds of work arrangements, ensuring that everyone gets paid accurately and on time.</p>
+          
+          <h2>Multi-Entity Support</h2>
+          
+          <p>Many modern workers have multiple income sources. Our infrastructure makes it easy to manage payments across different entities, whether they're full-time employees, contractors, or hybrid workers.</p>
+          
+          <h2>Real-Time Processing</h2>
+          
+          <p>In today's fast-paced world, waiting two weeks for a paycheck isn't always feasible. Our system supports real-time payment processing, allowing for on-demand payments when needed.</p>
+          
+          <h2>Compliance Across Borders</h2>
+          
+          <p>Remote work means that employers and employees may be in different jurisdictions. Our compliance engine handles the complexity of multi-state and multi-country regulations, ensuring that payments are always compliant with local laws.</p>
+          
+          <h2>Data Security</h2>
+          
+          <p>With increased focus on data privacy and security, we've built our infrastructure with security at its core. We use bank-level encryption and adhere to strict compliance standards to protect sensitive information.</p>
+          
+          <p>By addressing these challenges, we're creating a payroll infrastructure that supports the way people work today and will work in the future.</p>
+          
+          <p>If you're building tools for the modern workforce, we'd love to show you how Salsa can help you offer payroll capabilities to your customers. Book a demo today to learn more.</p>
+        `,
+        image: '/blog/building-payroll.jpg',
+      }
+    },
+  ];
+}
+
+const { title, date, author, authorRole, authorAvatar, excerpt, content, image } = Astro.props;
+---
+
+<Layout title={`${title} - Salsa Blog`} description={excerpt}>
+  <article class="py-16 md:py-24">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <header class="mb-12">
+          <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">{title}</h1>
+          <div class="flex items-center mb-6">
+            <img 
+              src={authorAvatar} 
+              alt={author} 
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <p class="font-semibold">{author}</p>
+              <p class="text-sm text-gray-600">{authorRole}</p>
+            </div>
+          </div>
+          <time class="text-gray-600">{date}</time>
+        </header>
+        
+        <div class="rounded-xl overflow-hidden mb-12">
+          <img 
+            src={image} 
+            alt={title} 
+            class="w-full h-auto"
+          />
+        </div>
+        
+        <div class="prose prose-lg max-w-none">
+          <Fragment set:html={content} />
+        </div>
+        
+        <div class="mt-16 pt-8 border-t border-gray-200">
+          <a href="/blog" class="flex items-center text-salsa-purple font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            Back to Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import teamImage from '../assets/team-photo.jpg';
+
+const teamMembers = [
+  {
+    name: "Juan Rodriguez",
+    role: "Founder & CEO",
+    bio: "Built a 10-country payroll engine from the ground up and scaled it before selling to Intuit. Spent six years engineering Intuit's payroll product.",
+    avatar: "/avatar-juan.jpg"
+  },
+  {
+    name: "Sophia Chen",
+    role: "CTO",
+    bio: "Former engineering leader at Gusto with 12+ years experience in fintech. Expert in building secure, scalable financial infrastructure.",
+    avatar: "/avatar-sophia.jpg"
+  },
+  {
+    name: "Marcus Johnson",
+    role: "Head of Product",
+    bio: "Product veteran from Xero with deep knowledge of the payroll space and what platforms need to succeed.",
+    avatar: "/avatar-marcus.jpg"
+  },
+  {
+    name: "Priya Patel",
+    role: "Head of Compliance",
+    bio: "Former tax attorney with extensive experience in multi-state payroll tax compliance and regulatory requirements.",
+    avatar: "/avatar-priya.jpg"
+  }
+];
+
+const values = [
+  {
+    title: "Empower Developers",
+    description: "We're giving companies and developers access to the best tools possible to succeed in a competitive market and build payroll for the future."
+  },
+  {
+    title: "Simplify Complexity",
+    description: "Payroll doesn't have to be hard. We make it fast, easy, and flexible to please both you and your customers."
+  },
+  {
+    title: "Deep Expertise",
+    description: "We know payroll so that you don't have to. You can trust that we'll take care of the complexities while you focus on satisfying your customers."
+  },
+  {
+    title: "Build Trust",
+    description: "We're committed to maintaining your trust, which we accomplish by ensuring 100% compliance and treating your customers like our own."
+  }
+];
+---
+
+<Layout 
+  title="Salsa - About Us" 
+  description="Read about Salsa's mission, values, team, and the story of how we came to build the most modern payroll infrastructure on the market."
+>
+  <section class="pt-20 pb-16 md:pt-28 md:pb-24">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          About <span class="gradient-text">Salsa</span>
+        </h1>
+        <p class="mt-6 text-xl text-gray-600">
+          We empower developers to reimagine payroll by building modern infrastructure designed for modern work.
+        </p>
+      </div>
+      
+      <div class="mt-16 animate-on-scroll">
+        <div class="relative rounded-xl overflow-hidden">
+          <Image 
+            src={teamImage} 
+            alt="Salsa Team" 
+            class="w-full h-auto"
+            width={1200}
+            height={600}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-20 bg-salsa-gray">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-bold">
+          Our Values
+        </h2>
+        <p class="mt-4 text-xl text-gray-600">
+          The principles that guide everything we do.
+        </p>
+      </div>
+      
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {values.map((value, index) => (
+          <div 
+            class="bg-white rounded-xl p-8 shadow-sm animate-on-scroll" 
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <h3 class="text-xl font-semibold">{value.title}</h3>
+            <p class="mt-3 text-gray-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-20 bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-bold">
+          Our Story
+        </h2>
+      </div>
+      
+      <div class="mt-12 max-w-3xl mx-auto prose prose-lg animate-on-scroll">
+        <p>
+          Juan built a 10-country payroll engine from the ground up, scaled it, and sold it to Intuit. 
+          He spent another six years engineering Intuit's payroll product and met a whole team of 
+          talented engineers who secretly shared the same dream: what if we could rebuild payroll 
+          infrastructure to make it easier and faster?
+        </p>
+        <p>
+          Juan wanted to create the best rails for modern payroll and let every developer build on 
+          top of it. So, they joined forces to start Salsa and bravely proclaimed to the world 
+          "One day, payroll will be modern AND simple. And we'll help lead this change."
+        </p>
+        <p>
+          Why the name Salsa? Because paying people doesn't have to be a complicated dance, it should 
+          just be delicious and maybe a little spicy. And having a great name helped convince all 
+          of their favorite engineers to join the journey.
+        </p>
+        <p class="font-medium">
+          From the team that brought you QuickBooks Payroll, Gusto, and Xero, we're building the 
+          infrastructure we wish we had when we started out.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-20 bg-salsa-gray">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-bold">
+          Meet Our Team
+        </h2>
+        <p class="mt-4 text-xl text-gray-600">
+          The experts behind Salsa's payroll infrastructure.
+        </p>
+      </div>
+      
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {teamMembers.map((member, index) => (
+          <div 
+            class="bg-white rounded-xl p-6 shadow-sm text-center animate-on-scroll" 
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <img 
+              src={member.avatar} 
+              alt={member.name} 
+              class="w-24 h-24 rounded-full mx-auto mb-4"
+            />
+            <h3 class="text-xl font-semibold">{member.name}</h3>
+            <p class="text-salsa-purple font-medium">{member.role}</p>
+            <p class="mt-3 text-gray-600 text-sm">{member.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-20 bg-gradient-to-r from-salsa-purple to-salsa-blue text-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-bold">
+          Join Our Team
+        </h2>
+        <p class="mt-6 text-xl opacity-90">
+          We're on a mission to transform payroll infrastructure and we're looking for talented people to join us.
+        </p>
+        <div class="mt-10">
+          <a href="/careers" class="btn bg-white text-salsa-purple hover:bg-opacity-90">
+            View Open Positions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

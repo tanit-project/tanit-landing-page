@@ -1,0 +1,166 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// This would typically come from a CMS or other data source
+const blogPosts = [
+  {
+    title: 'Introducing Salsa: Modern Payroll Infrastructure',
+    slug: 'introducing-salsa',
+    date: 'April 15, 2025',
+    author: 'Juan Rodriguez',
+    authorRole: 'Founder & CEO',
+    authorAvatar: '/avatar-juan.jpg',
+    excerpt: 'Today, we're excited to introduce Salsa, a modern payroll infrastructure designed for developers.',
+    image: '/blog/introducing-salsa.jpg',
+  },
+  {
+    title: 'Building Payroll for Modern Work',
+    slug: 'building-payroll-for-modern-work',
+    date: 'April 10, 2025',
+    author: 'Sophia Chen',
+    authorRole: 'CTO',
+    authorAvatar: '/avatar-sophia.jpg',
+    excerpt: 'How we designed a payroll infrastructure that meets the needs of today's workforce.',
+    image: '/blog/building-payroll.jpg',
+  },
+  {
+    title: 'The Future of Embedded Payroll',
+    slug: 'future-of-embedded-payroll',
+    date: 'April 5, 2025',
+    author: 'Marcus Johnson',
+    authorRole: 'Head of Product',
+    authorAvatar: '/avatar-marcus.jpg',
+    excerpt: 'How embedded payroll is changing the game for SaaS platforms and their customers.',
+    image: '/blog/future-payroll.jpg',
+  },
+  {
+    title: 'Navigating Payroll Compliance Across Borders',
+    slug: 'payroll-compliance-across-borders',
+    date: 'March 30, 2025',
+    author: 'Priya Patel',
+    authorRole: 'Head of Compliance',
+    authorAvatar: '/avatar-priya.jpg',
+    excerpt: 'A guide to maintaining compliance when processing payroll in multiple jurisdictions.',
+    image: '/blog/compliance.jpg',
+  }
+];
+
+const categories = [
+  'All',
+  'Product Updates',
+  'Engineering',
+  'Compliance',
+  'Industry Insights',
+  'Case Studies'
+];
+---
+
+<Layout 
+  title="Blog - Salsa" 
+  description="Stay up to date with the latest news, product updates, and insights from the Salsa team."
+>
+  <section class="pt-20 pb-16 md:pt-28 md:pb-24 bg-salsa-gray">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Salsa <span class="gradient-text">Blog</span>
+        </h1>
+        <p class="mt-6 text-xl text-gray-600">
+          Stay up to date with the latest news, product updates, and insights from the Salsa team.
+        </p>
+      </div>
+      
+      <div class="mt-12 flex items-center justify-center flex-wrap gap-3 animate-on-scroll">
+        {categories.map((category, index) => (
+          <a 
+            href={index === 0 ? '/blog' : `/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
+            class={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+              index === 0 
+                ? 'bg-salsa-purple text-white' 
+                : 'bg-white text-gray-700 hover:bg-salsa-purple hover:text-white'
+            }`}
+          >
+            {category}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-20">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogPosts.map((post, index) => (
+          <a 
+            href={`/blog/${post.slug}`}
+            class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 animate-on-scroll"
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div class="h-48 overflow-hidden">
+              <img 
+                src={post.image} 
+                alt={post.title} 
+                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <img 
+                  src={post.authorAvatar} 
+                  alt={post.author} 
+                  class="w-8 h-8 rounded-full mr-3"
+                />
+                <div class="text-sm">
+                  <p class="font-semibold">{post.author}</p>
+                  <time class="text-gray-500">{post.date}</time>
+                </div>
+              </div>
+              <h2 class="text-xl font-bold mb-2 line-clamp-2">{post.title}</h2>
+              <p class="text-gray-600 line-clamp-3 mb-4">{post.excerpt}</p>
+              <div class="text-salsa-purple font-medium">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <!-- Pagination (for demo purposes) -->
+      <div class="mt-16 flex justify-center items-center space-x-2">
+        <span class="w-10 h-10 flex items-center justify-center rounded-full bg-salsa-purple text-white">1</span>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-gray-700 hover:bg-salsa-purple hover:text-white transition-colors duration-200">2</a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-gray-700 hover:bg-salsa-purple hover:text-white transition-colors duration-200">3</a>
+        <span class="px-2">...</span>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-gray-700 hover:bg-salsa-purple hover:text-white transition-colors duration-200">8</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-20 bg-salsa-gray">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">
+          Subscribe to our newsletter
+        </h2>
+        <p class="mt-4 text-xl text-gray-600">
+          Get the latest updates and insights delivered to your inbox.
+        </p>
+        
+        <form class="mt-8 flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input 
+            type="email" 
+            placeholder="Enter your email"
+            class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-salsa-purple focus:border-salsa-purple"
+            required
+          />
+          <button type="submit" class="btn btn-primary whitespace-nowrap">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
