@@ -13,8 +13,8 @@ const navItems = [
 
 <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
   <div class="container-custom flex items-center justify-between h-20">
-    <a href="/" class="flex items-center" aria-label="Payflo home">
-      <Image src={logoSrc} alt="Payflo Logo" width={120} height={40} />
+    <a href="/" class="flex items-center transition-transform duration-300 hover:scale-105" aria-label="Payflo home">
+      <Image src={logoSrc} alt="Payflo Logo" width={120} height={40} class="transition-all duration-300 hover:brightness-110" />
     </a>
     
     <!-- Desktop Nav -->
@@ -22,7 +22,7 @@ const navItems = [
       {navItems.map(item => (
         <a 
           href={item.href} 
-          class="text-gray-700 hover:text-payflo-purple transition-colors duration-200"
+          class="text-gray-700 hover:text-payflo-purple transition-all duration-300"
         >
           {item.name}
         </a>
@@ -30,13 +30,16 @@ const navItems = [
     </nav>
     
     <div class="flex items-center space-x-4">
-      <a href="/login" class="hidden md:inline-block text-payflo-dark hover:text-payflo-purple">Log In</a>
+      <a href="/login" class="hidden md:inline-block text-payflo-dark hover:text-payflo-purple transition-all duration-300 relative">
+        Log In
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-payflo-purple transition-all duration-300 group-hover:w-full"></span>
+      </a>
       <a href="/book-demo" class="btn btn-primary">Book a Demo</a>
       
       <!-- Mobile Menu Button -->
       <button 
         id="menu-toggle" 
-        class="md:hidden flex items-center" 
+        class="md:hidden flex items-center transition-transform duration-300" 
         aria-label="Toggle menu"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -49,28 +52,16 @@ const navItems = [
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-white w-full border-t border-gray-100">
     <div class="container-custom py-4 space-y-4">
-      {navItems.map(item => (
+      {navItems.map((item, index) => (
         <a 
           href={item.href} 
-          class="block py-2 text-gray-700 hover:text-payflo-purple"
+          class="block py-2 text-gray-700 hover:text-payflo-purple transition-all duration-300"
+          style={`transition-delay: ${index * 50}ms;`}
         >
           {item.name}
         </a>
       ))}
-      <a href="/login" class="block py-2 text-gray-700 hover:text-payflo-purple">Log In</a>
+      <a href="/login" class="block py-2 text-gray-700 hover:text-payflo-purple transition-all duration-300">Log In</a>
     </div>
   </div>
 </header>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-  });
-</script>

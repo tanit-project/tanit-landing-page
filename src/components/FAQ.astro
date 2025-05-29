@@ -27,8 +27,13 @@ const faqs = [
 ];
 ---
 
-<section class="py-20 bg-payflo-gray">
-  <div class="container-custom">
+<section class="py-20 bg-payflo-gray relative overflow-hidden">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
+  </div>
+  
+  <div class="container-custom relative">
     <div class="text-center max-w-3xl mx-auto animate-on-scroll">
       <h2 class="text-3xl md:text-4xl font-bold">
         Frequently Asked Questions
@@ -41,17 +46,19 @@ const faqs = [
     <div class="mt-12 max-w-3xl mx-auto">
       {faqs.map((faq, index) => (
         <div 
-          class="mb-6 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden animate-on-scroll"
+          class="mb-6 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden animate-on-scroll faq-item hover:shadow-md transition-all duration-300"
           style={`animation-delay: ${index * 0.1}s`}
         >
           <details class="group">
-            <summary class="flex justify-between items-center cursor-pointer p-6">
-              <h3 class="text-lg font-medium">{faq.question}</h3>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+            <summary class="flex justify-between items-center cursor-pointer p-6 transition-all duration-300 hover:bg-gray-50">
+              <h3 class="text-lg font-medium transition-colors duration-300 group-hover:text-payflo-purple">{faq.question}</h3>
+              <div class="flex-shrink-0 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
             </summary>
-            <div class="px-6 pb-6 text-gray-600">
+            <div class="px-6 pb-6 text-gray-600 faq-content">
               <p>{faq.answer}</p>
             </div>
           </details>
@@ -63,8 +70,11 @@ const faqs = [
       <p class="text-gray-600">
         Still have questions? We're here to help.
       </p>
-      <a href="/contact" class="mt-4 inline-block text-payflo-purple font-medium hover:underline">
-        Contact Us →
+      <a href="/contact" class="mt-4 inline-flex items-center text-payflo-purple font-medium hover:underline group">
+        Contact Us 
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
       </a>
     </div>
   </div>
