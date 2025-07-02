@@ -170,16 +170,25 @@ document.addEventListener('astro:page-load', () => {
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
       // Toggle the menu with animation
-      if (mobileMenu.classList.contains('hidden')) {
+      const isMenuOpen = !mobileMenu.classList.contains('hidden');
+      
+      if (!isMenuOpen) {
         // Show menu
         mobileMenu.classList.remove('hidden');
         mobileMenu.classList.add('mobile-menu-open');
-        
-        // Animate the hamburger icon to X
+        menuToggle.setAttribute('aria-expanded', 'true');
         menuToggle.classList.add('menu-open');
+        
+        // Focus first menu item for keyboard navigation
+        const firstMenuItem = mobileMenu.querySelector('a');
+        if (firstMenuItem) {
+          firstMenuItem.focus();
+        }
       } else {
         // Hide menu
         mobileMenu.classList.add('mobile-menu-closing');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.classList.remove('menu-open');
         
         // Wait for animation to finish before hiding
         setTimeout(() => {
@@ -187,9 +196,22 @@ document.addEventListener('astro:page-load', () => {
           mobileMenu.classList.remove('mobile-menu-closing');
           mobileMenu.classList.add('hidden');
         }, 300);
-        
-        // Animate the X icon back to hamburger
+      }
+    });
+    
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('mobile-menu-closing');
+        menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.classList.remove('menu-open');
+        menuToggle.focus(); // Return focus to toggle button
+        
+        setTimeout(() => {
+          mobileMenu.classList.remove('mobile-menu-open');
+          mobileMenu.classList.remove('mobile-menu-closing');
+          mobileMenu.classList.add('hidden');
+        }, 300);
       }
     });
   }

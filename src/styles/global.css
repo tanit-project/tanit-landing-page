@@ -91,13 +91,19 @@ body {
   transform: translate3d(0, 0, 0); /* For better performance */
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
   transform: translateY(-2px);
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .btn:active {
   transform: translateY(1px);
+}
+
+.btn:focus {
+  outline: 2px solid theme('colors.payflo-purple');
+  outline-offset: 2px;
 }
 
 .ripple-effect {
@@ -134,7 +140,8 @@ body {
   transform: translateZ(0); /* For better performance */
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.feature-card:focus-within {
   @apply shadow-xl;
   transform: translateY(-5px);
 }
@@ -165,7 +172,8 @@ nav a::after {
   transition: width 0.3s ease;
 }
 
-nav a:hover::after {
+nav a:hover::after,
+nav a:focus::after {
   width: 100%;
 }
 
@@ -269,7 +277,37 @@ nav a:hover::after {
   @apply bg-payflo-gray rounded-xl p-8 transition-all duration-300;
 }
 
-.testimonial-card:hover {
+.testimonial-card:hover,
+.testimonial-card:focus-within {
   @apply bg-white shadow-lg;
   transform: translateY(-5px);
+}
+
+/* ===== Focus Indicators ===== */
+*:focus {
+  outline: 2px solid theme('colors.payflo-purple');
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users but keep for keyboard users */
+.js-focus-visible *:focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: theme('colors.payflo-purple');
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
 }
