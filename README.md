@@ -6,11 +6,13 @@ This is a modern reimplementation of the [salsa.dev](https://www.salsa.dev/) web
 
 - Built with Astro 5.7
 - Responsive design using Tailwind CSS
-- Smooth animations on scroll
+- Smooth & subtle micro-interactions
 - Optimized images with Astro's built-in image optimization
 - Modern SEO practices
 - Accessibility-friendly components
 - Fast page transitions with View Transitions API
+
+[<img width="609" height="500" alt="home-page" src="https://github.com/user-attachments/assets/1e311553-3314-4c40-96f6-50daa5cf36f0" />](https://payflo.corytrimm.com)
 
 ## Project Structure
 
