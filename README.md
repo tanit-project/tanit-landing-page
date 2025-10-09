@@ -1,6 +1,4 @@
-# Payflo.dev - Astro 5.7 Implementation
-
-This is a modern reimplementation of the [salsa.dev](https://www.salsa.dev/) website using Astro 5.7, following the latest best practices.
+# Tanıt
 
 ## Features
 
@@ -53,20 +51,12 @@ cd astro-payroll-solution-theme
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
 3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 4. Open your browser and navigate to `http://localhost:4321`
@@ -77,10 +67,6 @@ To build the site for production, run:
 
 ```bash
 npm run build
-# or
-yarn build
-# or
-pnpm build
 ```
 
 The build output will be in the `dist/` directory.
@@ -89,10 +75,6 @@ To preview the production build locally:
 
 ```bash
 npm run preview
-# or
-yarn preview
-# or
-pnpm preview
 ```
 
 ## Customization
@@ -127,18 +109,6 @@ The site uses a combination of:
 
 1. CSS animations defined in `src/styles/global.css`
 2. Intersection Observer for triggering animations on scroll, implemented in `src/scripts/animations.js`
-
-## Deployment
-
-This Astro site can be deployed to any static hosting service like:
-
-- Netlify
-- Vercel
-- GitHub Pages
-- Cloudflare Pages
-- AWS S3 + CloudFront
-
-Follow the respective platform's documentation for deployment instructions.
 
 ## License
 
