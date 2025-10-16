@@ -6,7 +6,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://tanit-project.github.io',
-  base: "/tanit-landing-page",
+  // base: "/tanit-landing-page",
   output: 'static',
   prefetch: true,
   integrations: [
