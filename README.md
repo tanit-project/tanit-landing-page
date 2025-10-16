@@ -63,7 +63,7 @@ TANIT allows small-to-medium businesses to easily manage their Instagram campaig
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/tanit-project/tanit-presentation.git
+git clone https://github.com/tanit-project/tanit-project.github.io.git
 cd tanit-presentation
 ```
 
@@ -132,7 +132,7 @@ The site uses a combination of:
 
 ## Project Resources
 
-- **GitHub Repository**: [https://github.com/tanit-project/tanit](https://github.com/tanit-project/tanit)
+- **GitHub Repository**: [https://github.com/tanit-project/tanit-project.github.io](https://github.com/tanit-project/tanit-project.github.io)
 - **Project Reports**: Available in the Resources section
 - **API Documentation**: Coming soon
 - **Demo Video**: Coming soon

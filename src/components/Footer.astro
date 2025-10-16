@@ -4,14 +4,6 @@ import { Icon } from 'astro-icon/components';
 const projectLinks = [
   { name: 'How It Works', href: '#how-it-works' },
   { name: 'Team', href: '#team' },
-  { name: 'Resources', href: '#resources' },
-];
-
-const resourceLinks = [
-  { name: 'GitHub Repository', href: 'https://github.com/tanit-project/tanit' },
-  { name: 'Project Reports', href: '#reports' },
-  { name: 'Documentation', href: '#documentation' },
-  { name: 'Presentation', href: '#slides' },
 ];
 
 const teamLinks = [
@@ -23,7 +15,7 @@ const teamLinks = [
 ];
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/tanit-project/tanit', icon: 'github' },
+  { name: 'GitHub', href: 'https://github.com/tanit-project/', icon: 'github' },
   { name: 'LinkedIn', href: 'https://linkedin.com/company/tanit', icon: 'linkedin' },
   { name: 'Instagram', href: 'https://instagram.com/tanit_ai', icon: 'instagram' },
 ];
@@ -39,7 +31,7 @@ const socialLinks = [
   <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-payflo-purple via-payflo-blue to-payflo-purple bg-[length:200%_auto] animate-gradient-x"></div>
   
   <div class="container-custom relative">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-gray-800">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12 border-b border-gray-800">
       <div class="lg:col-span-1">
         <a href="/" class="inline-flex items-center gap-2 transition-transform duration-300 hover:scale-105" aria-label="TANIT home">
           <div class="h-10 w-10 rounded-lg bg-gradient-to-r from-payflo-purple to-payflo-blue flex items-center justify-center">
@@ -87,25 +79,6 @@ const socialLinks = [
               <a 
                 href={link.href} 
                 class="text-gray-400 hover:text-white transition-colors duration-300 inline-block"
-                style={`transition-delay: ${index * 50}ms;`}
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      
-      <div>
-        <h3 class="text-lg font-semibold mb-4 text-white/90 hover:text-white transition-colors duration-300">Resources</h3>
-        <ul class="space-y-3">
-          {resourceLinks.map((link, index) => (
-            <li class="transform transition-all duration-300 hover:translate-x-1">
-              <a 
-                href={link.href} 
-                class="text-gray-400 hover:text-white transition-colors duration-300 inline-block"
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 style={`transition-delay: ${index * 50}ms;`}
               >
                 {link.name}

@@ -4,7 +4,6 @@ import { Icon } from 'astro-icon/components';
 const navItems = [
   { name: 'Features', href: '#how-it-works' },
   { name: 'Team', href: '#team' },
-  { name: 'Resources', href: '#resources' },
 ];
 ---
 
@@ -30,11 +29,11 @@ const navItems = [
     </nav> -->
     
     <div class="flex items-center space-x-4">
-      <a href="https://github.com/tanit-project/tanit" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 text-payflo-dark hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded px-3 py-2">
+      <a href="https://github.com/tanit-project/" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 text-payflo-dark hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded px-3 py-2">
         <Icon name="ph:github-logo" class="h-5 w-5" />
         <span>GitHub</span>
       </a>
-      <a href="#resources" class="btn btn-primary focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2">View Resources</a>
+      <a href="#team" class="btn btn-primary focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2">View Team</a>
       
       <!-- Mobile Menu Button -->
       <button 
@@ -63,7 +62,7 @@ const navItems = [
           {item.name}
         </a>
       ))}
-      <a href="https://github.com/tanit-project/tanit" target="_blank" rel="noopener noreferrer" class="block py-2 px-2 text-gray-700 hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded">GitHub</a>
+      <a href="https://github.com/tanit-project/" target="_blank" rel="noopener noreferrer" class="block py-2 px-2 text-gray-700 hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded">GitHub</a>
     </div>
   </nav>
 </header>
