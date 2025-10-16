@@ -1,34 +1,77 @@
 ---
-import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import featureImage1 from '../assets/feature-1.svg';
-import featureImage2 from '../assets/feature-2.svg';
-import featureImage3 from '../assets/feature-3.svg';
 
 const features = [
   {
-    title: "Become indispensable",
-    description: "Adding a payroll solution on top of your existing features means your customers can get everything done inside their favorite platform: yours.",
-    icon: "ph:star-duotone",
-    image: featureImage1,
+    title: "Easy Post Management",
+    description: "Upload your photos and add a short prompt. TANIT uses AI to instantly generate stunning Instagram posts, reels, or stories tailored to your brand.",
+    icon: "ph:images",
+    details: [
+      "AI-powered content generation",
+      "Website & WhatsApp bot access",
+      "Automatic design & captioning",
+      "Ready-to-share in one click"
+    ]
   },
   {
-    title: "Access the most modern tools",
-    description: "We haven't just replicated what's out there – we've leveled up. Our infrastructure is faster to set up, easier to maintain, more scalable and less error-prone.",
-    icon: "ph:lightning-duotone",
-    image: featureImage2,
+    title: "Smart Scheduling",
+    description: "Plan and schedule your Instagram content in advance. Posts go live automatically at the best engagement times with no manual upload needed.",
+    icon: "ph:calendar-check",
+    details: [
+      "Schedule posts, stories & reels",
+      "Automated publishing",
+      "Perfect for recurring updates",
+      "Consistent brand presence"
+    ]
   },
   {
-    title: "Now available in the U.S. & Canada",
-    description: "Launch your product out in the world within just a few weeks and get fast, valuable feedback from customers to keep growing.",
-    icon: "ph:globe-duotone",
-    image: featureImage3,
+    title: "Special Day Posts",
+    description: "Never miss an occasion! TANIT automatically detects holidays and special events, generating relevant content complete with visuals, captions, and hashtags.",
+    icon: "ph:balloon",
+    details: [
+      "Auto occasion detection",
+      "National & religious holidays",
+      "AI content suggestions",
+      "Culturally connected posts"
+    ]
+  },
+  {
+    title: "AI Features",
+    description: "Powered by advanced AI to create professional-quality content. Automatic prompt optimization ensures your images look their best.",
+    icon: "ph:cpu",
+    details: [
+      "Automatic prompt optimization",
+      "High-quality AI images",
+      "Smart layout selection",
+      "Professional filters & transitions"
+    ]
+  },
+  {
+    title: "Virtual Try-On",
+    description: "Perfect for boutiques and clothing stores. Let customers visualize how products look on them with AI-powered virtual try-on technology.",
+    icon: "ph:shopping-bag",
+    details: [
+      "AI-powered visualization",
+      "Perfect for fashion retailers",
+      "Boost customer confidence",
+      "Reduce return rates"
+    ]
+  },
+  {
+    title: "Effortless Engagement",
+    description: "Keep your brand active and consistent with automated content management from one simple dashboard. Focus on your business while TANIT handles social media.",
+    icon: "ph:chart-line-up",
+    details: [
+      "All-in-one dashboard",
+      "Consistent branding",
+      "Automated engagement",
+      "Time-saving automation"
+    ]
   },
 ];
 ---
 
-<section class="py-20 bg-gradient-to-b from-white to-payflo-gray relative overflow-hidden">
-  <!-- Subtle background pattern with parallax effect -->
+<section id="features" class="py-20 bg-gradient-to-b from-white to-payflo-gray relative overflow-hidden">
   <div class="absolute inset-0 opacity-5 parallax" data-speed="0.1">
     <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
   </div>
@@ -36,30 +79,29 @@ const features = [
   <div class="container-custom relative">
     <div class="text-center max-w-3xl mx-auto">
       <h2 class="animate-on-scroll delay-0 text-3xl md:text-4xl font-bold">
-        Everything you need to build embedded payroll
+        Powerful Features for Your Social Media Success
       </h2>
       <p class="animate-on-scroll delay-1 mt-4 text-xl text-gray-600">
-        Our tools combine ease and flexibility with maximum customization. No matter how you choose to build, you can launch quickly and ensure a stellar user experience.
+        From AI-powered content creation to smart scheduling, TANIT provides everything you need to manage your Instagram presence effortlessly.
       </p>
     </div>
     
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {features.map((feature, index) => (
-        <div class={`feature-card animate-on-scroll delay-${index + 2} group`}>
+        <div class={`feature-card animate-on-scroll delay-${index % 3 + 2} group`}>
           <div class="h-12 w-12 rounded-lg bg-gradient-to-r from-payflo-purple to-payflo-blue flex items-center justify-center text-white mb-6 transition-transform duration-300 group-hover:scale-110">
             <Icon name={feature.icon} class="h-6 w-6 transition-transform duration-300 group-hover:rotate-12" />
           </div>
           <h3 class="text-xl font-semibold transition-colors duration-300 group-hover:text-payflo-purple">{feature.title}</h3>
           <p class="mt-3 text-gray-600">{feature.description}</p>
-          <div class="mt-6 hover-zoom rounded-lg overflow-hidden">
-            <Image 
-              src={feature.image} 
-              alt={feature.title}
-              class="w-full h-auto rounded-lg transition-all duration-500"
-              width={300}
-              height={200}
-            />
-          </div>
+          <ul class="mt-4 space-y-2">
+            {feature.details.map((detail) => (
+              <li class="flex items-start gap-2 text-sm text-gray-600">
+                <Icon name="ph:check-circle" class="h-5 w-5 text-payflo-purple mt-0.5 flex-shrink-0" />
+                <span>{detail}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>

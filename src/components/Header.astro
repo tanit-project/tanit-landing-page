@@ -1,24 +1,24 @@
 ---
-import { Image } from 'astro:assets';
-import logoSrc from '../assets/logo.svg';
+import { Icon } from 'astro-icon/components';
 
 const navItems = [
-  { name: 'Product', href: '/product' },
-  { name: 'Solutions', href: '/solutions' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'About Us', href: '/about-us' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Features', href: '#how-it-works' },
+  { name: 'Team', href: '#team' },
+  { name: 'Resources', href: '#resources' },
 ];
 ---
 
 <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100" role="banner">
   <div class="container-custom flex items-center justify-between h-20">
-    <a href="/" class="flex items-center transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded" aria-label="Payflo home">
-      <Image src={logoSrc} alt="Payflo Logo" width={120} height={40} class="transition-all duration-300 hover:brightness-110 focus:brightness-110" />
+    <a href="/" class="flex items-center gap-2 transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded" aria-label="TANIT home">
+      <div class="h-10 w-10 rounded-lg bg-gradient-to-r from-payflo-purple to-payflo-blue flex items-center justify-center">
+        <Icon name="ph:star" class="h-6 w-6 text-white" />
+      </div>
+      <span class="text-2xl font-bold gradient-text">TANIT</span>
     </a>
     
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
+    <!-- <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
       {navItems.map(item => (
         <a 
           href={item.href} 
@@ -27,14 +27,14 @@ const navItems = [
           {item.name}
         </a>
       ))}
-    </nav>
+    </nav> -->
     
     <div class="flex items-center space-x-4">
-      <a href="/login" class="hidden md:inline-block text-payflo-dark hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 relative focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded px-2 py-1">
-        Log In
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-payflo-purple transition-all duration-300 group-hover:w-full"></span>
+      <a href="https://github.com/tanit-project/tanit" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 text-payflo-dark hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded px-3 py-2">
+        <Icon name="ph:github-logo" class="h-5 w-5" />
+        <span>GitHub</span>
       </a>
-      <a href="/book-demo" class="btn btn-primary focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2">Book a Demo</a>
+      <a href="#resources" class="btn btn-primary focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2">View Resources</a>
       
       <!-- Mobile Menu Button -->
       <button 
@@ -63,7 +63,20 @@ const navItems = [
           {item.name}
         </a>
       ))}
-      <a href="/login" class="block py-2 px-2 text-gray-700 hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded">Log In</a>
+      <a href="https://github.com/tanit-project/tanit" target="_blank" rel="noopener noreferrer" class="block py-2 px-2 text-gray-700 hover:text-payflo-purple focus:text-payflo-purple transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-payflo-purple focus:ring-offset-2 rounded">GitHub</a>
     </div>
   </nav>
 </header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+    });
+  });
+</script>

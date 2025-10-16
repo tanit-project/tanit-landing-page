@@ -5,7 +5,8 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://payflo.dev',
+  site: 'https://tanit-project.github.io',
+  base: "/tanit-landing-page",
   output: 'static',
   prefetch: true,
   integrations: [
@@ -15,6 +16,29 @@ export default defineConfig({
       include: {
         ph: [
           "star-duotone",
+          // Added icons used across the TANIT site
+          "star",
+          "images",
+          "image",
+          "calendar",
+          "calendar-check",
+          "gift",
+          "balloon",
+          "cpu",
+          "shopping-bag",
+          "chart-line-up",
+          "check-circle",
+          "lightbulb",
+          "github-logo",
+          "linkedin-logo",
+          "user",
+          "envelope",
+          "file-text",
+          "projector-screen",
+          "code",
+          "video",
+          "speaker-simple-high",
+          "info",
           "lightning-duotone",
           "globe-duotone",
           "users-duotone",

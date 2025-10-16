@@ -1,19 +1,24 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 const steps = [
   {
     number: "01",
-    title: "Connect with our API",
-    description: "Integrate with our RESTful API to access our payroll infrastructure.",
+    title: "General Campaign Management",
+    description: "Users enter a short prompt and upload photos via website or WhatsApp bot. The system uses AI to instantly generate Instagram posts, reels, or stories with automatic design, captioning, and hashtags.",
+    icon: "ph:image",
   },
   {
     number: "02",
-    title: "Configure your experience",
-    description: "Customize the user interface to match your brand and requirements.",
+    title: "Scheduling Activities",
+    description: "Smart social scheduler lets stores plan and schedule their Instagram content in advance. Posts go live automatically at the best engagement times with no manual upload needed.",
+    icon: "ph:calendar-check",
   },
   {
     number: "03",
-    title: "Launch and scale",
-    description: "Go live with your payroll solution and scale as your customer base grows.",
+    title: "Automatic Recommendations",
+    description: "The system recognizes national holidays and special events, automatically generating relevant post, story, and reel ideas complete with visuals, captions, and hashtags that fit the occasion.",
+    icon: "ph:lightbulb",
   },
 ];
 ---
@@ -26,9 +31,9 @@ const steps = [
   
   <div class="container-custom relative">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="animate-on-scroll delay-0 text-3xl md:text-4xl font-bold">How It Works</h2>
+      <h2 class="animate-on-scroll delay-0 text-3xl md:text-4xl font-bold">How TANIT Works</h2>
       <p class="animate-on-scroll delay-1 mt-4 text-xl text-gray-600">
-        Get up and running with embedded payroll in three simple steps.
+        Three powerful ways TANIT helps manage your Instagram campaigns effortlessly.
       </p>
     </div>
     
@@ -40,10 +45,13 @@ const steps = [
         <div 
           class={`bg-white rounded-xl p-8 shadow-lg border border-gray-100 animate-on-scroll delay-${index + 2} group hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
         >
-          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-payflo-purple/10 text-payflo-purple font-semibold transition-all duration-300 group-hover:bg-payflo-purple group-hover:text-white group-hover:scale-110">
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-payflo-purple/10 text-payflo-purple font-semibold text-lg transition-all duration-300 group-hover:bg-payflo-purple group-hover:text-white group-hover:scale-110 mb-4">
             {step.number}
           </div>
-          <h3 class="mt-6 text-xl font-semibold transition-colors duration-300 group-hover:text-payflo-purple">{step.title}</h3>
+          <div class="h-12 w-12 rounded-lg bg-gradient-to-r from-payflo-purple to-payflo-blue flex items-center justify-center text-white mb-4 transition-transform duration-300 group-hover:scale-110">
+            <Icon name={step.icon} class="h-6 w-6 transition-transform duration-300 group-hover:rotate-12" />
+          </div>
+          <h3 class="mt-2 text-xl font-semibold transition-colors duration-300 group-hover:text-payflo-purple">{step.title}</h3>
           <p class="mt-3 text-gray-600">{step.description}</p>
           
           <!-- Arrow indicator for next step (visible on mobile) -->
@@ -56,19 +64,6 @@ const steps = [
           )}
         </div>
       ))}
-    </div>
-    
-    <div class="mt-16 text-center">
-      <div class="animate-on-scroll delay-5">
-        <a href="/documentation" class="btn btn-primary group">
-          <span class="inline-flex items-center">
-            View API Documentation
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </span>
-        </a>
-      </div>
     </div>
   </div>
 </section>

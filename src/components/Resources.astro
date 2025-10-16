@@ -1,0 +1,107 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const resources = [
+  {
+    title: "GitHub Repository",
+    description: "Access our complete source code, documentation, and contribute to the project.",
+    icon: "ph:github-logo",
+    link: "https://github.com/tanit-project/tanit",
+    linkText: "View on GitHub",
+    color: "purple"
+  },
+  {
+    title: "Project Reports",
+    description: "Read our detailed project reports, research findings, and technical documentation.",
+    icon: "ph:file-text",
+    link: "#reports",
+    linkText: "View Reports",
+    color: "blue"
+  },
+  {
+    title: "Presentation Slides",
+    description: "Download our project presentation slides and demo materials.",
+    icon: "ph:projector-screen",
+    link: "#slides",
+    linkText: "View Slides",
+    color: "purple"
+  },
+  {
+    title: "API Documentation",
+    description: "Comprehensive API documentation for developers and technical users.",
+    icon: "ph:code",
+    link: "#api-docs",
+    linkText: "View API Docs",
+    color: "blue"
+  },
+  {
+    title: "Demo Video",
+    description: "Watch our live demo and see TANIT in action with real-world examples.",
+    icon: "ph:video",
+    link: "#demo",
+    linkText: "Watch Demo",
+    color: "purple"
+  },
+  {
+    title: "Project Pronunciation",
+    description: "Learn how to pronounce 'Tanıt' correctly. Named after the ancient Phoenician goddess.",
+    icon: "ph:speaker-simple-high",
+    link: "#pronunciation",
+    linkText: "Listen",
+    color: "blue"
+  },
+];
+---
+
+<section id="resources" class="py-20 bg-gradient-to-b from-payflo-gray to-white relative overflow-hidden">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
+  </div>
+  
+  <div class="container-custom relative">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="animate-on-scroll delay-0 text-3xl md:text-4xl font-bold">Project Resources</h2>
+      <p class="animate-on-scroll delay-1 mt-4 text-xl text-gray-600">
+        Explore our documentation, code repositories, reports, and more.
+      </p>
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {resources.map((resource, index) => (
+        <a 
+          href={resource.link}
+          class={`block bg-white rounded-xl p-6 shadow-lg border border-gray-100 animate-on-scroll delay-${index % 3 + 2} group hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
+        >
+          <div class={`h-12 w-12 rounded-lg bg-gradient-to-r ${resource.color === 'purple' ? 'from-payflo-purple to-payflo-blue' : 'from-payflo-blue to-payflo-purple'} flex items-center justify-center text-white mb-4 transition-transform duration-300 group-hover:scale-110`}>
+            <Icon name={resource.icon} class="h-6 w-6 transition-transform duration-300 group-hover:rotate-12" />
+          </div>
+          
+          <h3 class="text-xl font-semibold transition-colors duration-300 group-hover:text-payflo-purple">
+            {resource.title}
+          </h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            {resource.description}
+          </p>
+          
+          <div class="mt-4 inline-flex items-center text-payflo-purple font-medium group-hover:gap-2 transition-all duration-300">
+            <span>{resource.linkText}</span>
+            <Icon name="ph:arrow-right" class="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+          </div>
+        </a>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center">
+      <div class="animate-on-scroll delay-5 bg-gradient-to-r from-payflo-purple to-payflo-blue rounded-xl p-8 text-white">
+        <Icon name="ph:info" class="h-12 w-12 mx-auto mb-4" />
+        <h3 class="text-2xl font-bold mb-2">About Tanıt</h3>
+        <p class="text-white/90 max-w-2xl mx-auto">
+          Tanıt (pronounced "tah-NEET") is named after the ancient Phoenician goddess of fertility and the moon. 
+          Our AI-powered platform brings life to your social media presence, much like the goddess brought prosperity to ancient civilizations.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+

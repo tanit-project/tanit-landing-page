@@ -1,4 +1,8 @@
-# Tanıt
+# TANIT - AI-Powered Instagram Content Creation
+
+> CS 491 Capstone Project Presentation Website
+
+TANIT (pronounced "tah-NEET") is an AI-powered social media partner that helps small businesses create stunning Instagram posts, reels, and stories effortlessly.
 
 ## Features
 
@@ -10,7 +14,15 @@
 - Accessibility-friendly components
 - Fast page transitions with View Transitions API
 
-[<img width="609" height="500" alt="home-page" src="https://github.com/user-attachments/assets/1e311553-3314-4c40-96f6-50daa5cf36f0" />](https://payflo.corytrimm.com)
+## What is TANIT?
+
+TANIT allows small-to-medium businesses to easily manage their Instagram campaigns including stories, posts, and reels. The platform features:
+
+- **AI-Powered Content Creation**: Upload photos and prompts to instantly generate professional content
+- **Smart Scheduling**: Automated publishing at optimal engagement times
+- **Special Day Posts**: Automatic holiday and occasion content recommendations
+- **Virtual Try-On**: AI-powered visualization for boutiques and clothing stores
+- **Multi-Platform Access**: Website and WhatsApp bot integration
 
 ## Project Structure
 
@@ -31,6 +43,14 @@
 └── tsconfig.json         # TypeScript configuration
 ```
 
+## Team Members
+
+- Sümeyye Acar
+- Muhammed Furkan Başıbüyük
+- Kutay Buyruk
+- Ömer Bıçakcıoğlu
+- Betül Doğrul
+
 ## Getting Started
 
 ### Prerequisites
@@ -43,8 +63,8 @@
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/ctrimm/astro-payroll-solution-theme.git
-cd astro-payroll-solution-theme
+git clone https://github.com/tanit-project/tanit-presentation.git
+cd tanit-presentation
 ```
 
 2. Install dependencies:
@@ -108,7 +128,18 @@ For example:
 The site uses a combination of:
 
 1. CSS animations defined in `src/styles/global.css`
-2. Intersection Observer for triggering animations on scroll, implemented in `src/scripts/animations.js`
+2. Intersection Observer for triggering animations on scroll
+
+## Project Resources
+
+- **GitHub Repository**: [https://github.com/tanit-project/tanit](https://github.com/tanit-project/tanit)
+- **Project Reports**: Available in the Resources section
+- **API Documentation**: Coming soon
+- **Demo Video**: Coming soon
+
+## About the Name
+
+Tanıt (pronounced "tah-NEET") is named after the ancient Phoenician goddess of fertility and the moon. Our AI-powered platform brings life to your social media presence, much like the goddess brought prosperity to ancient civilizations.
 
 ## License
 

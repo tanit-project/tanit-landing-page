@@ -1,0 +1,133 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const teamMembers = [
+  {
+    name: "Sümeyye Acar",
+    role: "",
+    image: "/team-photos/sumeyye.png",
+    bio: "",
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "mailto:sumeyye@example.com"
+    }
+  },
+  {
+    name: "Muhammed Furkan Başıbüyük",
+    role: "",
+    image: "/team-photos/furkan.jpeg",
+    bio: "",
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "mailto:furkan@example.com"
+    }
+  },
+  {
+    name: "Kutay Buyruk",
+    role: "",
+    image: "/team-photos/kutay.png",
+    bio: "",
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "mailto:kutay@example.com"
+    }
+  },
+  {
+    name: "Ömer Bıçakcıoğlu",
+    role: "",
+    image: "/team-photos/omer.png",
+    bio: "",
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "mailto:omer@example.com"
+    }
+  },
+  {
+    name: "Betül Doğrul",
+    role: "",
+    image: "/team-photos/betul.png", // Placeholder - image not yet added
+    bio: "",
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "mailto:betul@example.com"
+    }
+  },
+];
+---
+
+<section id="team" class="py-20 bg-white relative overflow-hidden">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/grid-pattern.svg');"></div>
+  </div>
+  
+  <div class="container-custom relative">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="animate-on-scroll delay-0 text-3xl md:text-4xl font-bold">Meet Our Team</h2>
+      <!-- <p class="animate-on-scroll delay-1 mt-4 text-xl text-gray-600">
+        The talented individuals behind TANIT – passionate about AI, social media, and innovation.
+      </p> -->
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+      {teamMembers.map((member, index) => (
+        <div class={`animate-on-scroll delay-${index % 3 + 2} group h-full`}>
+          <div class="h-full flex flex-col bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div class="relative aspect-square bg-gradient-to-br from-payflo-purple to-payflo-blue overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-32 h-32 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Icon name="ph:user" class="h-16 w-16 text-white" />
+                </div>
+              </div>
+              <img 
+                src={member.image} 
+                alt={member.name} 
+                loading="lazy" 
+                class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-110" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-payflo-purple transition-colors duration-300">
+                {member.name}
+              </h3>
+              <p class="text-sm text-gray-600 mt-1">{member.role}</p>
+              <p class="text-sm text-gray-500 mt-2">{member.bio}</p>
+              
+              {/* <div class="mt-auto pt-4 flex gap-3">
+                <a 
+                  href={member.social.linkedin} 
+                  class="text-gray-400 hover:text-payflo-purple transition-all duration-300 hover:scale-110"
+                  aria-label={`${member.name} LinkedIn`}
+                >
+                  <Icon name="ph:linkedin-logo" class="h-5 w-5" />
+                </a>
+                <a 
+                  href={member.social.github} 
+                  class="text-gray-400 hover:text-payflo-purple transition-all duration-300 hover:scale-110"
+                  aria-label={`${member.name} GitHub`}
+                >
+                  <Icon name="ph:github-logo" class="h-5 w-5" />
+                </a>
+                <a 
+                  href={member.social.email} 
+                  class="text-gray-400 hover:text-payflo-purple transition-all duration-300 hover:scale-110"
+                  aria-label={`Email ${member.name}`}
+                >
+                  <Icon name="ph:envelope" class="h-5 w-5" />
+                </a>
+              </div> */}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
